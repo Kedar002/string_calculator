@@ -17,4 +17,10 @@ void main() {
   test('Newline should be treated as a delimiter', () {
     expect(calculator.add("1\n2,3"), equals(6));
   });
+  test('Custom single-character delimiter should be supported', () {
+    expect(calculator.add("//;\n1;2"), equals(3));
+  });
+  test('Custom multi-character delimiter should be supported', () {
+    expect(calculator.add("//[***]\n1***2***3"), equals(6));
+  });
 }
