@@ -1,5 +1,6 @@
 class StringCalculator {
   int add(String numbers) {
-    return 0; // Just enough to pass the first test
+    if (numbers.isEmpty) return 0;
+    return int.parse(numbers); // Convert string to integer
   }
 }
