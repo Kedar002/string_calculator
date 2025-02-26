@@ -28,7 +28,8 @@ class StringCalculator {
     // Find negatives
     List<int> negatives = parsedNumbers.where((n) => n < 0).toList();
     if (negatives.isNotEmpty) {
-      throw Exception("negative numbers not allowed ${negatives.join(",")}");
+      throw FormatException(
+          "negative numbers not allowed ${negatives.join(",")}");
     }
 
     return parsedNumbers.fold(0, (sum, num) => sum + num);
