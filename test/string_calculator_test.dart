@@ -23,4 +23,12 @@ void main() {
   test('Custom multi-character delimiter should be supported', () {
     expect(calculator.add("//[***]\n1***2***3"), equals(6));
   });
+  test('Negative numbers should throw an exception', () {
+    expect(() => calculator.add("-1,2"),
+        throwsA(contains("negative numbers not allowed -1")));
+  });
+  test('Multiple negative numbers should be shown in exception', () {
+    expect(() => calculator.add("-1,-2,3"),
+        throwsA(contains("negative numbers not allowed -1,-2")));
+  });
 }
